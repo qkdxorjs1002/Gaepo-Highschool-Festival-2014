@@ -1,0 +1,12 @@
+#element_to_pop_up {
+	/* [disabled]background-color: #fff; */
+	color: #000;
+	padding-top: 5%;
+	padding-right: 5%;
+	padding-bottom: 5%;
+	padding-left: 5%;
+	display: none;
+}
+.b-close{
+	cursor: pointer;
+}
