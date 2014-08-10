@@ -51,7 +51,7 @@
 	white-space: nowrap;
 	outline: 0!important
 }.ui-footer .ui-title{margin:0 1em}.ui-content{border-width:0;overflow:visible;overflow-x:hidden;padding:1em}.ui-corner-all>.ui-header:first-child,.ui-corner-all>.ui-content:first-child,.ui-corner-all>.ui-footer:first-child{-webkit-border-top-left-radius:inherit;border-top-left-radius:inherit;-webkit-border-top-right-radius:inherit;border-top-right-radius:inherit}.ui-corner-all>.ui-header:last-child,.ui-corner-all>.ui-content:last-child,.ui-corner-all>.ui-footer:last-child{-webkit-border-bottom-left-radius:inherit;border-bottom-left-radius:inherit;-webkit-border-bottom-right-radius:inherit;border-bottom-right-radius:inherit}.ui-btn{
-	font-size: 1.7em;
+	font-size: 2em;
 	margin: .5em 0;
 	padding: .7em 1em;
 	display: block;
