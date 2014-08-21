@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+<!--[if IE]><script> alert('IE 계열은 정식으로 지원하지 않고있습니다.\n 접속을 원하시면 http://gaepo.homp.kr/#home 으로');</script><![endif]-->
 <title>GREEN LIGHT</title>
 <link href="css/jquery.mobile-1.4.3.min.css" rel="stylesheet" type="text/css"/>
 <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
@@ -13,22 +15,30 @@
 <link href="css/jquery.tabslet.styles.css" rel="stylesheet" type="text/css"/>
 <script src="js/jquery.tabslet.min.js" type="text/javascript"></script>
 </head> 
-<body>
-<!--[if IE]>
-<script>alert("IE 계열은 지원하지 않고있습니다. Chrome, Firefox를 사용하세요")</script>
-<![endif]-->
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+
+															<!-------INITIAL------->
 <div data-role="page" id="door">
-	<center><img src="img/title.png" width="100%" alt=""></center>
-	<button id="my-button">모바일 접속</button>
+<script>
+$(document).ready(function() { 
+    $('#element_to_pop_up').bPopup({onClose: function() { window.location.href = "#home"; }});
+});
+</script>
 	<div id="element_to_pop_up">
-    	<div id="popupdiv">
-        	<img src="img/door.jpg" alt="" width="100%" height="100%"/ class="b-close">
-        </div>
+		<div id="popupdiv">
+			<center>
+				<img src="img/door.jpg" alt="" width="100%" class="b-close">
+			<center>
+		</div>
 	</div>
 </div>
+
+
+															<!-------HOME------->
 <div data-role="page" id="home">
 	<div data-role="header">
-		<h1>그린 라이트</h1>
+		<h1><a href="#home">그린 라이트</a></h1>
     </div>
 	<div data-role="listview">
 			<li><center><a href="#guide"><img src="img/track.png" width="40%" alt=""></a></center>
@@ -47,21 +57,54 @@
 	</div>
 </div>
 
+
+															<!-------GUIDE------->
 <div data-role="page" id="guide">
 	<div data-role="header">
-		<h1>가이드</h1>
+		<h1><a href="#home">가이드</a></h1>
 	</div>
 	<div data-role="content">	
-		content	
+		<div class='tabs tabs_animate'>
+			<ul class='horizontal'>
+				<li><a href="#floor">학교내부지도</a></li>
+				<li><a href="#table">교실배정표</a></li>
+			</ul>
+			<div id='floor'>
+            	<h3>
+                	<div>
+                    	<center>
+							<a href="img/map-1.png" target="new">
+                        	<img src="img/map-1.png" width="100%" alt="">
+							<br><br>
+                        	이미지를 클릭하여 크게보기</a>
+                        </center>
+                    </div>
+                </h3>
+            </div>
+			<div id='table'>
+            	<h3>
+                	<div>
+                    	<center>
+							<a href="img/table.png" target="new">
+                        	<img src="img/table.png" width="100%" alt="">
+							<br><br>
+                        	이미지를 클릭하여 크게보기</a>
+                        </center>
+                    </div>
+                </h3>
+            </div>
+		</div>
 	</div>
 	<div data-role="footer">
 		<h4>ⓒGPDEV</h4>
 	</div>
 </div>
 
+
+															<!-------SCHEDULE------->
 <div data-role="page" id="sched">
 	<div data-role="header">
-		<h1>시간표</h1>
+		<h1><a href="#home">시간표</a></h1>
 	</div>
 	<div data-role="content">
 		<div class='tabs tabs_animate'>
@@ -72,7 +115,7 @@
             	<h3>
                 	<div>
                     	<center>
-                        	<a href="http://gaepo.homp.kr/img/festisched.png">
+                        	<a href="img/festisched.png" target="new">
                         	<img src="img/festisched.png" width="100%" alt="">
                         	<br><br>
                         	이미지를 클릭하여 크게보기</a>
@@ -87,21 +130,24 @@
 	</div>
 </div>
 
+
+															<!-------VIDEO------->
 <div data-role="page" id="vid">
 	<div data-role="header">
-		<h1>홍보영상</h1>
+		<h1><a href="#home">홍보영상</a></h1>
 	</div>
 	<div data-role="content">	
 		<div class='tabs tabs_animate'>
 			<ul class='horizontal'>
 				<li><a href="#tab-1">홍보영상</a></li>
 				<li><a href="#tab-2">작년홍보영상</a></li>
+				<li><a href="#tab-3">작년축제영상</a></li>
 			</ul>
 			<div id='tab-1'>
             	<h3>
                 	<div>
                     	<center>
-                        	null
+                        	<div><!--<video poster="img/vidposter.jpg" src="vid/@@@@@" width="100%" controls>HTML5를 지원하지 않는 브라우저입니다.</video>--></div>
                         </center>
                     </div>
                 </h3>
@@ -110,7 +156,22 @@
             	<h3>
                 	<div>
                     	<center>
-                        	<div><video src="http://gaepo.hol.es/vid/2013vid.mp4" width="100%" controls>HTML5를 지원하지 않는 브라우저입니다. <a href="http://www.youtube.com/watch?v=eZ0z31S3lLg">유튜브링크</a></video></div>
+                        	<div>
+								<video poster="img/vidposter.jpg" src="vid/2013vid.mp4" width="100%" controls>HTML5를 지원하지 않는 브라우저입니다. <a href="http://www.youtube.com/watch?v=eZ0z31S3lLg">유튜브링크</a></video>
+							</div>
+                        </center>
+                    </div>
+                </h3>
+            </div>
+			<div id='tab-3'>
+            	<h3>
+                	<div>
+                    	<center>
+                        	<div>
+								<video poster="img/vidposter.jpg" src="vid/2013vid-2.mp4" width="100%" controls>HTML5를 지원하지 않는 브라우저입니다. <a href="http://www.youtube.com/watch?v=ef3Hig9gXGI">유튜브링크</a></video>
+								<br>
+								<video poster="img/vidposter.jpg" src="vid/2013vid-3.mp4" width="100%" controls>HTML5를 지원하지 않는 브라우저입니다. <a href="http://www.youtube.com/watch?v=rJBlEcWylss">유튜브링크</a></video>
+							</div>
                         </center>
                     </div>
                 </h3>
@@ -122,9 +183,11 @@
 	</div>
 </div>
 
+
+															<!-------POLLING------->
 <div data-role="page" id="vote">
 	<div data-role="header">
-		<h1>투표</h1>
+		<h1><a href="#home">투표</a></h1>
 	</div>
 	<div data-role="content">	
 		content	
@@ -134,29 +197,24 @@
 	</div>
 </div>
 
+
+															<!-------INFO------->
 <div data-role="page" id="info">
 	<div data-role="header">
-		<h1>정보</h1>
+		<h1><a href="#home">정보</a></h1>
     </div>
 	<div data-role="listview">
-			<li><span style="font-size:1.7em;">Planner</span>
-            <li><span style="font-size:1.3em;color:gray;">null</span>
-			<li><span style="font-size:1.7em;">Programmer</span>
-            <li><span style="font-size:1.3em;color:gray;">방태건(21021), 유용호(20823), 이홍균(20826), null</span>
-			<li><span style="font-size:1.7em;">Desinger</span> 
-            <li><span style="font-size:1.3em;color:gray;">null</span>
-			<li><span style="font-size:1.7em;">CodeLicense</span>
-            <li><span style="font-size:1.3em;color:gray;">jQuery, bPopup, Yannick Lung</span>
+			<li><div><center><img src="img/schoolimg.jpg" width="100%"></center></div>
+			<li><span style="font-size:2.3em;font-weight:bold;">Planner</span>
+            <li><span style="font-size:1.7em;color:gray;">이성운</span>
+			<li><span style="font-size:2.3em;font-weight:bold;">Programmer</span>
+            <li><span style="font-size:1.7em;color:gray;">방태건(21021), 유용호(20823), 이홍균(20826)</span>
+			<li><span style="font-size:2.3em;font-weight:bold;">Desinger</span> 
+            <li><span style="font-size:1.7em;color:gray;">Art: 배선유, 박중안<br>Web: 방태건</span>
+			<li><span style="font-size:2.3em;font-weight:bold;">CodeLicense</span>
+            <li><span style="font-size:1.7em;color:gray;">jQuery, bPopup, Yannick Lung, Novang</span>
 			<li><a href="http://github.com/qkdxorjs1002/">Source<a/>
     </div>
-	<div data-role="footer">
-		<h4>ⓒGPDEV</h4>
-    </div>
-</div>
-<div data-role="page" id="blank">
-	<div data-role="header">
-		<h1>blank</h1>
-	</div>
 	<div data-role="footer">
 		<h4>ⓒGPDEV</h4>
     </div>
